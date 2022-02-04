@@ -327,7 +327,11 @@ public class universidad extends JFrame {
 		txtBuscarCedula = new JTextField();
 		txtBuscarCedula.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent e) {
-				recargarTabla(2);
+				if(txtBuscarCedula.getText().matches("")) {
+					recargarTabla(0);
+				}else {
+					recargarTabla(2);
+				}
 			}
 		});
 		txtBuscarCedula.setColumns(10);
